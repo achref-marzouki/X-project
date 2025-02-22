@@ -35,7 +35,7 @@ const Comments = ({
   useEffect(() => {
     if (state.success) {
       socket.emit("sendNotification", {
-        recieverUsername: username,
+        receiverUsername: username,
         data: {
           senderUsername: user?.username,
           type: "comment",
@@ -49,13 +49,13 @@ const Comments = ({
     <div className="">
       {user && (
         <form
-          className="flex items-center justify-between gap-4 p-4 "
           action={formAction}
+          className="flex items-center justify-between gap-4 p-4 "
         >
           <div className="relative w-10 h-10 rounded-full overflow-hidden -z-10">
             <Image
               src={user?.imageUrl}
-              alt="Ashraf Dev"
+              alt="Lama Dev"
               w={100}
               h={100}
               tr={true}

@@ -36,12 +36,16 @@ const Share = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
 
   useEffect(() => {
-    if (state.success) formRef.current?.reset();
+    if (state.success) {
+      formRef.current?.reset();
+      setMedia(null);
+      setSettings({ type: "original", sensitive: false });
+    }
   }, [state]);
 
   return (
     <form
-    ref={formRef}
+      ref={formRef}
       className="p-4 flex gap-4"
       // action={(formData) => shareAction(formData, settings)}
       action={formAction}
@@ -176,10 +180,15 @@ const Share = () => {
               className="cursor-pointer"
             />
           </div>
-          <button className="bg-white text-black font-bold rounded-full py-2 px-4 disabled:cursor-not-allowed" disabled={isPending}>
+          <button
+            className="bg-white text-black font-bold rounded-full py-2 px-4 disabled:cursor-not-allowed"
+            disabled={isPending}
+          >
             {isPending ? "Posting" : "Post"}
           </button>
-          {state.error && <span className="text-red-300 p-4">Something went wrong!</span>}
+          {state.error && (
+            <span className="text-red-300 p-4">Something went wrong!</span>
+          )}
         </div>
       </div>
     </form>

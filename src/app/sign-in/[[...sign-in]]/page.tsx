@@ -162,10 +162,8 @@ const SignInPage = () => {
             Create Account
           </Link>
           <p className="w-72 text-xs">
-            By signing up, you agree to the{" "}
-            <span className="text-iconBlue">Terms of Service</span> and{" "}
-            <span className="text-iconBlue">Privacy Policy</span>, including{" "}
-            <span className="text-iconBlue">Cookie Use</span>.
+            By signing up, you agree to the <span className="text-iconBlue">Terms of Service</span> and <span className="text-iconBlue">Privacy Policy</span>,
+            including <span className="text-iconBlue">Cookie Use</span>.
           </p>
         </SignIn.Root>
       </div>

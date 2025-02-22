@@ -40,10 +40,10 @@ app.prepare().then(() => {
       addUser(username, socket.id);
     });
 
-    socket.on("sendNotification", ({ recieverUsername, data }) => {
-      const reciever = getUser(recieverUsername);
+    socket.on("sendNotification", ({ receiverUsername, data }) => {
+      const receiver = getUser(receiverUsername);
 
-      io.to(reciever.socketId).emit("getNotification", {
+      io.to(receiver.socketId).emit("getNotification", {
         id: uuidv4(),
         ...data,
       });

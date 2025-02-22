@@ -49,13 +49,14 @@ export async function GET(request: NextRequest) {
     },
     take: LIMIT,
     skip: (Number(page) - 1) * LIMIT,
+    orderBy: { createdAt: "desc" }
   });
 
   const totalPosts = await prisma.post.count({ where: whereCondition });
 
   const hasMore = Number(page) * LIMIT < totalPosts;
 
-  //  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return Response.json({ posts, hasMore });
 }

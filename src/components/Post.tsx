@@ -57,6 +57,7 @@ const Post = ({
       {/* POST CONTENT */}
       <div className={`flex gap-4 ${type === "status" && "flex-col"}`}>
         {/* AVATAR */}
+
         <div
           className={`${
             type === "status" && "hidden"
@@ -70,12 +71,13 @@ const Post = ({
             tr={true}
           />
         </div>
+
         {/* CONTENT */}
         <div className="flex-1 flex flex-col gap-2">
           {/* TOP */}
           <div className="w-full flex justify-between">
             <Link
-              href={`/${originalPost.user.username}`}
+              href={`/${originalPost.user.username} `}
               className="flex gap-4"
             >
               <div
@@ -97,7 +99,7 @@ const Post = ({
                 }`}
               >
                 <h1 className="text-md font-bold">
-                  {originalPost.user.displayName}
+                  {originalPost.user.username}
                 </h1>
                 <span
                   className={`text-textGray ${type === "status" && "text-sm"}`}

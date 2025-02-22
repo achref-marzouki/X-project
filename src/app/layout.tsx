@@ -5,8 +5,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import QueryProvider from "@/providers/QueryProvider";
 
 export const metadata: Metadata = {
-  title: "Ashraf Dev X Clone",
-  description: "Next.js social media application project",
+  title: "Ashraf X",
+  description: "Ashraf social media application project",
 };
 
 export default function AppLayout({

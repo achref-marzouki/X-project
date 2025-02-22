@@ -94,19 +94,11 @@ const SignUpPage = () => {
           </SignUp.Step>
           <SignUp.Step name="continue" className="flex flex-col gap-4">
             <Clerk.Field name="username">
-              <Clerk.Input
-                placeholder="username"
-                className="py-2 px-6 rounded-full text-black w-72 placeholder:text-sm"
-              />
+              <Clerk.Input placeholder="username" className="py-2 px-6 rounded-full text-black w-72 placeholder:text-sm" />
               <Clerk.FieldError className="text-red-300 text-sm" />
             </Clerk.Field>
 
-            <SignUp.Action
-              submit
-              className="w-72 text-center text-iconBlue underline"
-            >
-              Continue
-            </SignUp.Action>
+            <SignUp.Action submit className="w-72 text-center text-iconBlue underline">Continue</SignUp.Action>
           </SignUp.Step>
           <SignUp.Step name="verifications">
             <SignUp.Strategy name="email_code">
@@ -126,7 +118,7 @@ const SignUpPage = () => {
               </SignUp.Action>
             </SignUp.Strategy>
           </SignUp.Step>
-          {/* OR SIGN IN */}
+          {/* OR SIGN UP */}
           <div className="w-72 flex items-center gap-4">
             <div className="h-px bg-borderGray flex-grow"></div>
             <span className="text-textGrayLight">or</span>
@@ -136,7 +128,7 @@ const SignUpPage = () => {
             href="/sign-in"
             className="bg-iconBlue rounded-full p-2 text-white font-bold w-72 text-center"
           >
-            Already Have an account?
+            Already have an account?
           </Link>
           <p className="w-72 text-xs">
             By signing up, you agree to the{" "}

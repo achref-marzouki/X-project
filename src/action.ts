@@ -29,7 +29,6 @@ export const followUser = async (targetUserId: string) => {
     });
   }
 };
-
 export const likePost = async (postId: number) => {
   const { userId } = await auth();
 
@@ -52,7 +51,6 @@ export const likePost = async (postId: number) => {
     });
   }
 };
-
 export const rePost = async (postId: number) => {
   const { userId } = await auth();
 
@@ -212,6 +210,14 @@ export const addPost = async (
     }
   }
 
+  console.log({
+    ...validatedFields.data,
+    userId,
+    img,
+    imgHeight,
+    video,
+  });
+
   try {
     await prisma.post.create({
       data: {
@@ -228,4 +234,5 @@ export const addPost = async (
     console.log(err);
     return { success: false, error: true };
   }
+  return { success: false, error: true };
 };
